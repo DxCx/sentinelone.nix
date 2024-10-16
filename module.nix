@@ -9,7 +9,7 @@ let
 
     # initialize the data directory
     if [ -z "$(ls -A ${cfg.dataDir} 2>/dev/null)" ]; then
-      cp -r ${pkgs.sentinelone}/opt/sentinelone/* ${cfg.dataDir}
+      cp -r ${cfg.package}/opt/sentinelone/* ${cfg.dataDir}
 
       cat << EOF > ${cfg.dataDir}/configuration/install_config
     S1_AGENT_MANAGEMENT_TOKEN=$(cat ${cfg.sentinelOneManagementTokenPath})
